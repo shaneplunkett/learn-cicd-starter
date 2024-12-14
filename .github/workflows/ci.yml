@@ -37,9 +37,6 @@ jobs:
         run: "test -z $(go fmt ./...)"
 
       - name: "staticcheck"
-      - uses: actions/checkout@v2
-        with:
-          fetch-depth: 1
       - uses: dominikh/staticcheck-action@v1
         with:
           version: "latest"
