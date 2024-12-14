@@ -36,7 +36,7 @@ jobs:
       - name: Run Go
         run: "test -z $(go fmt ./...)"
   linting:
-    name: "Run Linting"
+    name: "staticcheck"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
