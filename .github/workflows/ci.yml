@@ -33,15 +33,13 @@ jobs:
         with:
           go-version: "1.23.0"
 
-      - name: Run Go
-        run: "test -z $(go fmt ./...)"
-  linting:
-    name: "staticcheck"
-    runs-on: ubuntu-latest
-    steps:
+      - name: "staticcheck"
       - uses: actions/checkout@v2
         with:
           fetch-depth: 1
       - uses: dominikh/staticcheck-action@v1
         with:
           version: "latest"
+
+      - name: Run Go
+        run: "test -z $(go fmt ./...)"
