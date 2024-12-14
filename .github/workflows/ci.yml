@@ -33,6 +33,9 @@ jobs:
         with:
           go-version: "1.23.0"
 
+      - name: Run Go
+        run: "test -z $(go fmt ./...)"
+
       - name: "staticcheck"
       - uses: actions/checkout@v2
         with:
@@ -40,6 +43,3 @@ jobs:
       - uses: dominikh/staticcheck-action@v1
         with:
           version: "latest"
-
-      - name: Run Go
-        run: "test -z $(go fmt ./...)"
